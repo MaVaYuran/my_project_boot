@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+
+<table align="center">
+  <tr>
+    <td>Title</td>
+    <td>Price</td>
+    <td></td>
+  </tr>
+  <tr th:each="product : ${products}">
+    <td th:text="${product.title}">Frida</td>
+    <td th:text="${product.price}">4.95</td>
+    <td><a href="@{/products/{id}/bucket(id=${product.id})}">Add to bucket</a></td>
+  </tr>
+</table>
+</body>
+</html>
